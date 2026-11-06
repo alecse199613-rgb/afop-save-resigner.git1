@@ -1,0 +1,24 @@
+[package]
+name = "avatar-fop-save-toolkit"
+version = "1.0.0"
+edition = "2021"
+authors = ["MountainousLeif"]
+description = "Save Toolkit for Avatar: Frontiers of Pandora (Goldberg UplayEmu) - resign saves between account UUIDs"
+
+[[bin]]
+name = "avatar-fop-save-toolkit"
+path = "src/main.rs"
+
+[dependencies]
+eframe = "0.27"
+rfd = "0.12"
+walkdir = "2"
+anyhow = "1"
+image = { version = "0.24", default-features = false, features = ["png"] }
+
+[build-dependencies]
+winresource = "0.1"
+
+[profile.release]
+opt-level = 2
+strip = true
